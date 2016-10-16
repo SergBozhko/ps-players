@@ -1,0 +1,13 @@
+// App variables
+
+// Paddings
+$p: 25px;
+
+@mixin p-b {
+  padding: $p 15px;
+}
+
+@mixin p-t-b {
+  padding-top: $p;
+  padding-bottom: $p;
+}

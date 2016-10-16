@@ -1,5 +1,10 @@
 // App layout styles
+
+@import "vars",
+        "colors";
+
 .app-content {
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+  @include p-t-b;
+  border-left: 1px solid $light-gray;
+  border-right: 1px solid $light-gray;
 }

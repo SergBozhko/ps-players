@@ -19,4 +19,5 @@ import { GamesComponent } from './games/games.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

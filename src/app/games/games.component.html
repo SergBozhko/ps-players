@@ -1,3 +1,17 @@
-<p>
-  games works!
-</p>
+<div class="row m-t-2">
+  <div class="col-md-4">
+    <input type="text" class="form-control" #gameInput>
+  </div>
+  <div class="col-md-2">
+    <button class="btn btn-primary" (click)="addGame(gameInput.value)">Добавить</button>
+  </div>
+</div>
+
+<ul class="list-group m-t-2">
+  <li class="list-group-item" *ngFor="let game of games">
+    Game: {{ game.title }} <br>
+    Description: {{ game.description }} <br>
+    Price: {{ game.price }} <br>
+    Rate: {{ game.rate }} <br>
+  </li>
+</ul>

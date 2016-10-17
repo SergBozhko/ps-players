@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
-import { IGame } from '../models/games.model';
-import { Game } from '../models/games.model';
+import {Component, OnInit} from '@angular/core';
+import {Http} from "@angular/http";
+import {Game} from "../models/games.model";
 
 @Component({
   selector: 'app-games',
@@ -11,29 +10,18 @@ import { Game } from '../models/games.model';
 
 export class GamesComponent implements OnInit {
 
-  games: IGame[];
+  public game: any;
 
-  constructor() {
-    this.games = [
-      {
-        title: 'GTA 5',
-        description: 'Cool game!',
-        price: 3500,
-        rate: 5
-      }
-    ];
+  constructor(private httpService: Http) {
+    this.game = null;
   }
 
-  addGame(title: string) {
-
-    let game = new Game(title, 'Test', 2500, 4);
-
-    this.games.push(game);
-
-    console.log('Game added');
-
+  ngOnInit() {
+    this.httpService.get('../../assets/test.json').subscribe(result => {
+      this.game = result.json();
+      // console.log(result.json());
+      console.log(this.game);
+    }, error => console.log(error));
   }
-
-  ngOnInit() {}
 
 }

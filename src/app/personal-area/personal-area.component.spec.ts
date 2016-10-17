@@ -1,11 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { GamesComponent } from './games.component';
+import { PersonalAreaComponent } from './personal-area.component';
 
-describe('Component: Games', () => {
+describe('Component: PersonalArea', () => {
   it('should create an instance', () => {
-    let component = new GamesComponent();
+    let component = new PersonalAreaComponent();
     expect(component).toBeTruthy();
   });
 });

@@ -1,0 +1,57 @@
+// Personal area
+
+@import "../../scss/vars",
+        "../../scss/colors";
+
+.user-avatar {
+  border: 4px solid $light-gray;
+  width: 100%;
+}
+
+.user-stats {
+  color: $light-gray;
+}
+
+.user-stats-content {
+  background-color: $wet-asphalt;
+  @include p-b;
+}
+
+.user-stats-nav {
+  border-radius: 0;
+  padding: 0;
+  background-color: $midnight-blue;
+
+  .nav-item + .nav-item {
+    margin-left: 1px;
+  }
+
+  .nav-item.active a.nav-link {
+    color: $light-gray;
+    background-color: $midnight-blue-hover;
+  }
+
+  a.nav-link {
+    color: $light-gray-nav;
+    display: block;
+    padding: 10px 15px;
+
+    &:hover {
+      color: $light-gray;
+      background-color: $midnight-blue-hover;
+    }
+  }
+}
+
+.user-nickname {
+  border-bottom: 1px solid $midnight-blue;
+
+  h3 {
+    text-shadow: 0 1px 0 $midnight-blue-hover;
+  }
+}
+
+.user-content-inner {
+  background-color: $light-gray;
+  @include p-t-b;
+}

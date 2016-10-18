@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { GamesComponent } from './games/games.component';
 import { PersonalAreaComponent } from './personal-area/personal-area.component';
 
+import {RestService} from "./shared/rest.service";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,7 @@ import { PersonalAreaComponent } from './personal-area/personal-area.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [RestService],
   bootstrap: [AppComponent]
 })
 

@@ -31,8 +31,11 @@
   </div>
 
   <!--App footer-->
-  <div class="app-footer" id="app-footer">
-
+  <div class="app-footer" id="app-footer" *ngIf="game">
+    Game: {{ game.title }}<br>
+    Description: {{ game.description }} <br>
+    Price: {{ game.price }} <br>
+    Rate: {{ game.rate }} <br>
   </div>
 
 </div>

@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Http} from "@angular/http";
 import {Game} from "../models/games.model";
+import {RestService} from "../shared/rest.service";
+import {Observable} from "rxjs";
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-games',
@@ -10,18 +12,15 @@ import {Game} from "../models/games.model";
 
 export class GamesComponent implements OnInit {
 
-  public game: any;
+  public game: Observable<Game>;
 
-  constructor(private httpService: Http) {
-    this.game = null;
+  constructor(private rest: RestService) {
+
   }
-
-  ngOnInit() {
-    this.httpService.get('../../assets/test.json').subscribe(result => {
-      this.game = result.json();
-      // console.log(result.json());
-      console.log(this.game);
-    }, error => console.log(error));
+  // TODO: разобраться почему возвращаются данные в виде Observable
+  ngOnInit(): void {
+    this.game = this.rest.getData('../../assets/test.json');
+    console.log(this.game);
   }
 
 }

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { GamesComponent } from './games/games.component';
@@ -18,7 +19,18 @@ import {RestService} from "./shared/rest.service";
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        redirectTo: '/games',
+        pathMatch: 'full'
+      },
+      {
+        path: 'games',
+        component: GamesComponent
+      }
+    ])
   ],
   providers: [RestService],
   bootstrap: [AppComponent]

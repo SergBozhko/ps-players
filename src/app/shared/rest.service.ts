@@ -10,7 +10,7 @@ export class RestService {
 
   constructor(private http: Http) { }
 
-  public getData(url: string): Observable<any> {
+  public getData(url: string): Observable<Game> {
     return this.http
       .get(url)
       .map((data: Response) => this.item = data.json());

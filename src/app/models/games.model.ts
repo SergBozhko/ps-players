@@ -8,11 +8,11 @@ export class Game {
   public price: number;
   public rate: number;
 
-  // constructor(title: string, description?: string, price?: number, rate?: number) {
-  //   this.title = title || 'Untitled';
-  //   this.description = description || '';
-  //   this.price = price || 0;
-  //   this.rate = rate || 0;
-  // }
+  constructor(title: string, description?: string, price?: number, rate?: number) {
+    this.title = title || 'Untitled';
+    this.description = description || '';
+    this.price = price || 0;
+    this.rate = rate || 0;
+  }
 
 }

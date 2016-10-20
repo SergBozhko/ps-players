@@ -1,12 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import {RouterModule} from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { GamesComponent } from './games/games.component';
-import { PersonalAreaComponent } from './personal-area/personal-area.component';
+import {AppComponent} from './app.component';
+import {GamesComponent} from './games/games.component';
+import {PersonalAreaComponent} from './personal-area/personal-area.component';
 
 import {RestService} from "./shared/rest.service";
 
@@ -33,7 +33,8 @@ import {RestService} from "./shared/rest.service";
     ])
   ],
   providers: [RestService],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 
-export class AppModule { }
+export class AppModule {
+}

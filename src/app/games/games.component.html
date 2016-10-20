@@ -1,5 +1,5 @@
 <ul class="list-group m-t-2">
-  <li class="list-group-item" *ngIf="game">
+  <li class="list-group-item" *ngFor="let game of games">
     Game: {{ game.title }}<br>
     Description: {{ game.description }} <br>
     Price: {{ game.price }} <br>

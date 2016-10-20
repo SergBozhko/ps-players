@@ -1,12 +1,9 @@
 import {Injectable, Inject} from '@angular/core';
 import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs";
-import {Game} from "../models/games.model";
 
 @Injectable()
 export class RestService {
-
-  public item: Game;
 
   constructor(private http: Http, @Inject(Http) private _http:Http) {
     let _build = (<any> _http)._backend._browserXHR.build;
@@ -17,10 +14,10 @@ export class RestService {
     }
   }
 
-  public getData(url: string): Observable<Game> {
+  public getData(url: string): Observable<any> {
     return this.http
       .get(url)
-      .map((data: Response) => this.item = data.json());
+      .map((data: Response) => data.json());
   }
 
 }

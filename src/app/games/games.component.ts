@@ -11,19 +11,21 @@ import 'rxjs/add/operator/map';
 
 export class GamesComponent implements OnInit {
 
-  public games: Game;
+  public games: Game[];
 
   constructor(private rest: RestService) {
 
   }
 
   ngOnInit(): void {
+
     this.rest.getData('http://localhost:8080/api/games')
       .subscribe(res => {
         this.games = res;
         console.log(res);
       },
-        error => { console.log(error);
+        error => {
+          console.log(error);
       });
 
   }
